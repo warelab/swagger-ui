@@ -1,0 +1,177 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Gramene web services",
+        "description": "data.gramene.org API",
+        "version": "0.0.1"
+    },
+    "host": "data.gramene.org",
+    "schemes": [
+        "http"
+    ],
+    "basePath": "/",
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/ensembl": {
+            "get": {
+                "summary": "Proxy to Gramene's Ensembl REST installation",
+                "description": "Please refer to rest.ensembl.org for documentation\n",
+                "tags": [
+                    "Ensembl REST"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Ensembl REST response"
+                    }
+                }
+            }
+        },
+        "/search/genes": {
+            "get": {
+                "summary": "Genes",
+                "description": "This is the entry point for searching our solr genes core.\n",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "query string.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "fl",
+                        "in": "query",
+                        "description": "List of fields to include in response (default all).",
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Genes"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Solr response object"
+                    }
+                }
+            }
+        },
+        "/search/interpro": {
+            "get": {
+                "summary": "Interpro domains",
+                "description": "This is the entry point for searching our solr core for interpro domains.\n",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "query string.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "fl",
+                        "in": "query",
+                        "description": "List of fields to include in response (default all).",
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "Domains"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Solr response object"
+                    }
+                }
+            }
+        },
+        "/search/GO": {
+            "get": {
+                "summary": "Gene Ontology terms",
+                "description": "This is the entry point for searching our solr GO core.\n",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "query string.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "fl",
+                        "in": "query",
+                        "description": "List of fields to include in response (default all).",
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "GO"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Solr response object"
+                    }
+                }
+            }
+        },
+        "/search/PO": {
+            "get": {
+                "summary": "Plant Ontology terms",
+                "description": "This is the entry point for searching our solr PO core.\n",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "query string.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "fl",
+                        "in": "query",
+                        "description": "List of fields to include in response (default all).",
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "PO"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Solr response object"
+                    }
+                }
+            }
+        },
+        "/search/taxonomy": {
+            "get": {
+                "summary": "Gramene taxonomy",
+                "description": "This is the entry point for searching our solr taxonomy core.\n",
+                "parameters": [
+                    {
+                        "name": "q",
+                        "in": "query",
+                        "description": "query string.",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "fl",
+                        "in": "query",
+                        "description": "List of fields to include in response (default all).",
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "taxonomy"
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Solr response object"
+                    }
+                }
+            }
+        }
+    }
+}
